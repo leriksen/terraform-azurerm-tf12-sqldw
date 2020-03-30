@@ -56,7 +56,7 @@ variable "whitelisted_networks" {
 }
 
 variable "whitelisted_subnets" {
-  type        = list(map(string))
+  type        = list(string)
   description = "A list of subnet ids to be whiteslisted"
 }
 
