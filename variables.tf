@@ -51,12 +51,12 @@ variable "azure_tenant_id" {
 }
 
 variable "whitelisted_networks" {
-  type        = list(string)
+  type        = list(map(string))
   description = "A list of rules to be whitelisted from the sqldw firewall, .i.e.: [ { name = 'digitalNetwork' start_ip = '165.225.98.0' end_ip = '165.225.98.255' }]"
 }
 
 variable "whitelisted_subnets" {
-  type        = list(string)
+  type        = list(map(string))
   description = "A list of subnet ids to be whiteslisted"
 }
 
