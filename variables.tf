@@ -8,7 +8,7 @@ variable "location" {
 }
 
 variable "tags" {
-  type        = "map"
+  type        = map(string)
   description = "A map of the tags to use on the resources that are deployed with this module."
 }
 
@@ -22,18 +22,20 @@ variable "db_name" {
 
 variable "db_collation" {
   description = "Collation of the database"
-  default = "SQL_Latin1_General_CP1_CI_AS"
+  default     = "SQL_Latin1_General_CP1_CI_AS"
 }
 
 variable "sql_admin_user_name" {
   description = "SQL Admin username of the sqldw"
 }
+
 variable "sql_admin_password" {
-   description = "Password for the SQL Admin, must comply Azure policy"
+  description = "Password for the SQL Admin, must comply Azure policy"
 }
+
 variable "dwuname" {
-   description = "Capacity of the SQLDW"
-   default = "dw500c"
+  description = "Capacity of the SQLDW"
+  default     = "dw500c"
 }
 
 variable "aad_admin_user_id" {
@@ -49,11 +51,12 @@ variable "azure_tenant_id" {
 }
 
 variable "whitelisted_networks" {
-  type = "list"
+  type        = list(string)
   description = "A list of rules to be whitelisted from the sqldw firewall, .i.e.: [ { name = 'digitalNetwork' start_ip = '165.225.98.0' end_ip = '165.225.98.255' }]"
 }
 
 variable "whitelisted_subnets" {
-   type = "list"
-   description = "A list of subnet ids to be whiteslisted"
+  type        = list(string)
+  description = "A list of subnet ids to be whiteslisted"
 }
+
