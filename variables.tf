@@ -8,7 +8,7 @@ variable "location" {
 }
 
 variable "tags" {
-  type        = map(string)
+  type        = "map"
   description = "A map of the tags to use on the resources that are deployed with this module."
 }
 
@@ -49,11 +49,11 @@ variable "azure_tenant_id" {
 }
 
 variable "whitelisted_networks" {
-  type = list(map(string))
+  type = "list"
   description = "A list of rules to be whitelisted from the sqldw firewall, .i.e.: [ { name = 'digitalNetwork' start_ip = '165.225.98.0' end_ip = '165.225.98.255' }]"
 }
 
 variable "whitelisted_subnets" {
-   type = list(string)
+   type = "list"
    description = "A list of subnet ids to be whiteslisted"
 }
